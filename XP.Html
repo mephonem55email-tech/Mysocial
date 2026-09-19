@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>XP NetCenter - The Center of Your Internet</title>
+<meta name="description" content="XP NetCenter is an internet portal active since 2002 offering downloads, music, videos, games, forums, chat, blogs, and a guestbook. It functions as a long-running online hub with continuous development and community features, including web rings and external site integrations.">
+<meta name="keywords" content="XP NetCenter, internet portal, downloads, nostalgic web">
+<meta name="author" content="XP NetCenter">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Template CSS -->
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/coda-slider.css" type="text/css" media="screen" charset="utf-8" />
+
+<!-- Template JS -->
+<script src="js/jquery-1.2.6.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
+<script src="js/jquery.localscroll-1.2.5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.serialScroll-1.2.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/coda-slider.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- CSS personalizado para incorporar o conteúdo do XP NetCenter -->
+<style type="text/css">
+    /* Ajustes para o conteúdo do XP NetCenter dentro do novo layout */
+    .panel h1, .panel h2 {
+        color: #e2c934;
+    }
+    .panel p {
+        color: #c2bead;
+    }
+    .panel a {
+        color: #34baf9;
+    }
+    .panel a:hover {
+        color: #CCFF00;
+    }
+    .image_wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Estilo para a barra de navegação lateral (substituindo o menu original) */
+    .navigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .navigation li {
+        margin-bottom: 5px;
+    }
+    .navigation li a {
+        display: block;
+        padding: 8px 10px;
+        background-color: #2f2e28;
+        border-left: 3px solid #e2c934;
+        color: #c2bead;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.3s ease;
+    }
+    .navigation li a:hover {
+        background-color: #3a3931;
+        color: #CCFF00;
+        border-left-color: #34baf9;
+    }
+    .navigation li a .ui_icon {
+        float: right;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-top: 2px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    /* Ícones para a navegação */
+    .ui_icon.home { background-image: url('images/home.png'); }
+    .ui_icon.downloads { background-image: url('images/downloads.png'); }
+    .ui_icon.music { background-image: url('images/music.png'); }
+    .ui_icon.videos { background-image: url('images/videos.png'); }
+    .ui_icon.forum { background-image: url('images/forum.png'); }
+    .ui_icon.guestbook { background-image: url('images/guestbook.png'); }
+    .ui_icon.chat { background-image: url('images/chat.png'); }
+    .ui_icon.games { background-image: url('images/games.png'); }
+    .ui_icon.blog { background-image: url('images/blog.png'); }
+    .ui_icon.links { background-image: url('images/links.png'); }
+    .ui_icon.contact { background-image: url('images/contact.png'); }
+    .ui_icon.servers { background-image: url('images/servers.png'); }
+    .ui_icon.changelog { background-image: url('images/changelog.png'); }
+    .ui_icon.sports { background-image: url('images/sports.png'); }
+    .ui_icon.pdf { background-image: url('images/pdf.png'); }
+    .ui_icon.pshome { background-image: url('images/pshome.png'); }
+    
+    /* Área de conteúdo principal */
+    .panel {
+        color: #c2bead;
+    }
+    .panel iframe {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #444;
+        background-color: #fff;
+        margin-top: 10px;
+    }
+    
+    /* Caixa de boas-vindas */
+    #welcomeBox {
+        background: #487398;
+        border: 2px solid #666666;
+        padding: 8px;
+        color: #FFFFFF;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    /* Caixa de busca */
+    .search-box {
+        text-align: center;
+        margin: 15px 0;
+    }
+    .search-box table {
+        margin: auto;
+        background: #333028;
+        border: 1px solid #886;
+    }
+    .search-box input[type="text"] {
+        background: #2f2e28;
+        border: 1px solid #886;
+        color: #FFF;
+        padding: 4px;
+    }
+    .search-box button {
+        background: #333028;
+        border: 1px solid #886;
+        color: #c2bead;
+        padding: 4px 10px;
+        cursor: pointer;
+    }
+    .search-box button:hover {
+        background: #3a3931;
+        color: #CCFF00;
+    }
+    
+    /* Widgets laterais */
+    .sidebar-widget {
+        background: #333028;
+        border: 1px solid #886;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #c2bead;
+        font-size: 11px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    .sidebar-widget h3 {
+        background: #1a1a1a;
+        color: #F1BF00;
+        padding: 4px;
+        font-size: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid #F1BF00;
+        margin: 0 0 8px 0;
+        text-transform: uppercase;
+    }
+    .sidebar-widget a {
+        color: #34baf9;
+        text-decoration: none;
+    }
+    .sidebar-widget a:hover {
+        color: #CCFF00;
+    }
+    
+    /* Rodapé */
+    #templatemo_footer {
+        clear: both;
+        width: 600px;
+        padding: 20px 0;
+        text-align: center;
+        color: #c2bead;
+        font-size: 11px;
+    }
+    #templatemo_footer a {
+        color: #34baf9;
+        text-decoration: none;
+    }
+    #templatemo_footer a:hover {
+        color: #CCFF00;
+    }
+</style>
+</head>
+<body>
+
+<div id="slider">
+    
+    <div id="templatemo_sidebar">
+        <div id="templatemo_header">
+            <a href="#"><img src="https://files.catbox.moe/40k1z2.png" alt="XP NetCenter" style="max-width: 100%;" /></a>
+        </div> <!-- end of header -->
+        
+        <ul class="navigation">
+            <li><a href="#home">Home<span class="ui_icon home"></span></a></li>
+            <li><a href="#downloads">Downloads<span class="ui_icon downloads"></span></a></li>
+            <li><a href="#music">Music<span class="ui_icon music"></span></a></li>
+            <li><a href="#videos">Videos<span class="ui_icon videos"></span></a></li>
+            <li><a href="#forum">Forum<span class="ui_icon forum"></span></a></li>
+            <li><a href="#guestbook">Guestbook<span class="ui_icon guestbook"></span></a></li>
+            <li><a href="#chat">Chat<span class="ui_icon chat"></span></a></li>
+            <li><a href="#games">Games<span class="ui_icon games"></span></a></li>
+            <li><a href="#blog">Blog<span class="ui_icon blog"></span></a></li>
+            <li><a href="#links">Links<span class="ui_icon links"></span></a></li>
+            <li><a href="#contact">Contact<span class="ui_icon contact"></span></a></li>
+            <li><a href="#servers">Servers<span class="ui_icon servers"></span></a></li>
+            <li><a href="#changelog">Changelog<span class="ui_icon changelog"></span></a></li>
+            <li><a href="#sports">Sports<span class="ui_icon sports"></span></a></li>
+            <li><a href="#pdf">PDF Library<span class="ui_icon pdf"></span></a></li>
+            <li><a href="#pshome">PS Home<span class="ui_icon pshome"></span></a></li>
+        </ul>
+    </div> <!-- end of sidebar -->
+
+    <div id="templatemo_main">
+        <ul id="social_box">
+            <li><a href="https://twitter.com/intent/tweet?text=XP%20NetCenter%20-%20The%20Center%20of%20Your%20Internet&url=https://xpnethub.neocities.org" target="_blank"><img src="images/twitter.png" alt="twitter" /></a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://xpnethub.neocities.org" target="_blank"><img src="images/facebook.png" alt="facebook" /></a></li>
+            <li><a href="http://xpnethub.neocities.org/feed.rss" target="_top"><img src="images/rss.png" alt="rss" /></a></li>
+            <li><a href="http://internetometer.com/give/51677" target="_blank"><img src="images/rate.png" alt="rate" /></a></li>
+        </ul>
+        
+        <div id="content">
+        
+        <!-- scroll -->
+        
+            <div class="scroll">
+                <div class="scrollContainer">
+                
+                    <!-- PAINEL HOME -->
+                    <div class="panel" id="home">
+                        <div id="welcomeBox"></div>
+                        <script>
+                        var hour = new Date().getHours();
+                        var greeting = "Welcome";
+                        if (hour < 12) greeting = "Good morning";
+                        else if (hour < 18) greeting = "Good afternoon";
+                        else greeting = "Good evening";
+                        document.getElementById("welcomeBox").innerHTML =
+                            greeting + ", visitor!<br>" +
+                            "Thanks for visiting XP NetCenter.";
+                        </script>
+
+                        <div class="search-box">
+                            <table border="0" bgcolor="#333028" cellpadding="2" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <a href="https://www.google.com/" target="_blank">
+                                            <img src="https://web.archive.org/web/20060106053253im_/http://www.google.com/logos/Logo_25wht.gif" border="0" alt="Google">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="googleSearch" size="25" maxlength="255">
+                                        <button type="button" id="googleSearchButton">Search</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <label><input type="radio" name="searchType" value="web" checked> <font size="-1" color="#c2bead">Web</font></label>
+                                        <label><input type="radio" name="searchType" value="site"> <font size="-1" color="#c2bead">XP NetCenter</font></label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <script>
+                        (function () {
+                            var input = document.getElementById("googleSearch");
+                            var button = document.getElementById("googleSearchButton");
+                            function searchGoogle() {
+                                var query = input.value.trim();
+                                if (!query) { input.focus(); return; }
+                                var searchType = document.querySelector('input[name="searchType"]:checked').value;
+                                if (searchType === "site") { query += " site:xpnethub.neocities.org"; }
+                                var url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+                                window.open(url, "_blank");
+                            }
+                            button.addEventListener("click", searchGoogle);
+                            input.addEventListener("keydown", function (event) {
+                                if (event.key === "Enter") { event.preventDefault(); searchGoogle(); }
+                            });
+                        })();
+                        </script>
+
+                        <h1>Welcome to XP NetCenter</h1>
+                        <div class="image_wrapper image_fl"><img src="https://files.catbox.moe/40k1z2.png" alt="XP NetCenter" /></div>
+                        <p><em>XP NetCenter is an internet portal active since 2002 offering downloads, music, videos, games, forums, chat, blogs, and a guestbook.</em></p>
+                        <p>It functions as a long-running online hub with continuous development and community features, including web rings and external site integrations.</p>
+                        <div class="btn_more"><a href="#aboutus">More <span>&raquo;</span></a></div>
+                    </div> <!-- end of home -->
+                    
+                    <!-- PAINEL DOWNLOADS -->
+                    <div class="panel" id="downloads">
+                        <h1>Downloads</h1>
+                        <iframe src="enter/downloads.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL MUSIC -->
+                    <div class="panel" id="music">
+                        <h1>Music</h1>
+                        <iframe src="enter/music.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL VIDEOS -->
+                    <div class="panel" id="videos">
+                        <h1>Videos</h1>
+                        <iframe src="enter/videos.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL FORUM -->
+                    <div class="panel" id="forum">
+                        <h1>Forum</h1>
+                        <iframe src="enter/forum.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL GUESTBOOK -->
+                    <div class="panel" id="guestbook">
+                        <h1>Guestbook</h1>
+                        <iframe src="enter/guestbook.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL CHAT -->
+                    <div class="panel" id="chat">
+                        <h1>Chat</h1>
+                        <iframe src="enter/chat.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL GAMES -->
+                    <div class="panel" id="games">
+                        <h1>Games</h1>
+                        <iframe src="enter/games.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL BLOG -->
+                    <div class="panel" id="blog">
+                        <h1>Blog</h1>
+                        <iframe src="enter/blog.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL LINKS -->
+                    <div class="panel" id="links">
+                        <h1>Links</h1>
+                        <iframe src="enter/links.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL CONTACT -->
+                    <div class="panel" id="contact">
+                        <h1>Contact</h1>
+                        <iframe src="enter/contact.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL SERVERS -->
+                    <div class="panel" id="servers">
+                        <h1>Servers</h1>
+                        <iframe src="enter/servers.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL CHANGELOG -->
+                    <div class="panel" id="changelog">
+                        <h1>Changelog</h1>
+                        <iframe src="enter/changelog.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL SPORTS -->
+                    <div class="panel" id="sports">
+                        <h1>Sports</h1>
+                        <iframe src="enter/sports.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL PDF LIBRARY -->
+                    <div class="panel" id="pdf">
+                        <h1>PDF Library</h1>
+                        <iframe src="pdfjs/pdfjs.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                    
+                    <!-- PAINEL PS HOME -->
+                    <div class="panel" id="pshome">
+                        <h1>PS Home</h1>
+                        <iframe src="enter/pshome.html" name="imain" frameborder="0"></iframe>
+                    </div>
+                
+                </div>
+            </div>
+            
+        <!-- end of scroll -->
+        
+        </div> <!-- end of content -->
+        
+        <div id="templatemo_footer">
+            Copyright &copy; 2002-2012 XP NetCenter :: All Rights Reserved :: Do Not Reproduce In Any Form :: 
+            Version "XP NetCenter/CDNM <time datetime="2012-12-30">december 30, 2012</time>" :: <a href="http://xpnethub.neocities.org/feed.rss" target="_top">RSS Feed</a> :: 
+            <a href="http://internetometer.com/give/51677" target="_blank">Rate This Site</a>
+            <br /><br />
+            <div style="text-align:center; font-size:10px; font-family:Verdana; margin:10px 0;">
+                <b>Share XP NetCenter:</b>
+                <a href="https://twitter.com/intent/tweet?text=XP%20NetCenter%20-%20The%20Center%20of%20Your%20Internet&url=https://xpnethub.neocities.org" target="_blank">Tweet</a>
+                &middot;
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://xpnethub.neocities.org" target="_blank">Post on Facebook</a>
+            </div>
+        </div> <!-- end of templatemo_footer -->
+    
+    </div> <!-- end of main -->
+</div>
+
+<!-- Widgets laterais (antigos) - agora incorporados em uma área separada -->
+<div style="width:285px; margin: 20px auto; background:#487398; border:2px solid #F1BF00; font-family:Verdana; font-size:10pt; color:#F1BF00; overflow-y:auto; overflow-x:hidden;">
+    <div style="padding:8px; overflow-y:auto; overflow-x:hidden;">
+        <div class="sidebar-widget">
+            <h3>VISITOR COUNT</h3>
+            <script src="https://counter.websiteout.com/js/7/5/6341/0/index.js"></script>
+        </div>
+        <div class="sidebar-widget">
+            <h3>SITE RATING</h3>
+            <a href="http://internetometer.com/give/51677">
+                <img src="http://internetometer.com/image/51677.png" style="max-width:100%; height:auto; border:0;">
+            </a>
+        </div>
+        <div class="sidebar-widget">
+            <h3>TOP 8 FRIENDS</h3>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://kanandraw.neocities.org/stampimg/kananbutton.gif" width="88"><br>
+                        <font size="1" color="#c2bead">KananDraw</font>
+                    </td>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://four-shrine.neocities.org/button.png" width="88"><br>
+                        <font size="1" color="#c2bead">FourShrine</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://dragovz.neocities.org/graphics/dragovz%20button.gif" width="88"><br>
+                        <font size="1" color="#c2bead">Dragovz</font>
+                    </td>
+                    <td align="center" style="padding:4px;">
+                        <img src="https://ichinisanhai.nekoweb.org/MyLilAreaButton.jpeg" width="88"><br>
+                        <font size="1" color="#c2bead">My-Lil-Area</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://igor360.neocities.org/res/images/buttons/igor360.png" width="88"><br>
+                        <font size="1" color="#c2bead">Igor360</font>
+                    </td>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://xyllria.neocities.org/buttonxylcube.gif" width="88"><br>
+                        <font size="1" color="#c2bead">Xyllria</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://file.garden/Z5ztm_B6wj_8HQnK/ezgif.com-animated-gif-maker(21).gif" width="88"><br>
+                        <font size="1" color="#c2bead">TAOR</font>
+                    </td>
+                    <td align="center" style="padding:4px;">
+                        <img src="http://xxjebodiahgamingpromlgcoolxx.neocities.org/websitebutton.gif" width="88"><br>
+                        <font size="1" color="#c2bead">xxjebodiah</font>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="sidebar-widget">
+            <h3>WEBRING</h3>
+            <div id="ilovewebring-widget"></div>
+            <br>
+            <div style="background:#000; border:1px solid #0f0; padding:5px; margin-bottom:8px;">
+                <a href="https://igor360.neocities.org/webring" target="_top">okelote webring</a>
+                <div id="code" style="display:none;">XP202</div>
+                <div style="margin-top:5px;">
+                    <button onclick="ringprev()" style="background:#333028; color:#c2bead; border:1px solid #886;">&lt;</button>
+                    <button onclick="ringnext()" style="background:#333028; color:#c2bead; border:1px solid #886;">&gt;</button>
+                </div>
+                <script src="https://igor360.neocities.org/nocatime/script.js?add&type=script&url=https://igor360.neocities.org/webring/script.js"></script>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <a href="https://lime360.pythonanywhere.com/prev?url=https://yoyle.city&site=https://xpnethub.neocities.org"><img src="https://yoyle.city/img/webring/prev.png" height="20"></a>
+                <a href="https://yoyle.city/webring"><img src="https://yoyle.city/img/webring/button.png" height="20"></a>
+                <a href="https://lime360.pythonanywhere.com/next?url=https://yoyle.city&site=https://xpnethub.neocities.org"><img src="https://yoyle.city/img/webring/next.png" height="20"></a>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div id="wbl"></div>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div id="webmasteringbtn">
+                    <a href="https://webmasterwebring.netlify.app?XPNET25-previous">&lt;</a>
+                    <a href="https://webmasterwebring.netlify.app"><img src="https://file.garden/ZrZSgsrYfQXsO7QH/ww/btn.png" width="88"></a>
+                    <a href="https://webmasterwebring.netlify.app?XPNET25-random">?</a>
+                    <a href="https://webmasterwebring.netlify.app?XPNET25-next">&gt;</a>
+                </div>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div id="bonki-ring">
+                    <script src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"></script>
+                </div>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div style="border-width:2px; border-style:solid; width:160px; text-align:left; margin:0; background:linear-gradient(180deg, rgba(255, 0, 0, 1) 34%, rgba(150, 29, 29, 1) 44%);">
+                    <a href="https://ichinisanhai.nekoweb.org/toomanydivs.html"><img src="https://ichinisanhai.nekoweb.org/2manydivs.png" height="100"></a>
+                    <a href="https://ichinisanhai.nekoweb.org/toomanydivs.html?action=previous">&larr;</a>
+                    <a href="https://ichinisanhai.nekoweb.org/toomanydivs.html?action=random">random</a>
+                    <a href="https://ichinisanhai.nekoweb.org/toomanydivs.html?action=next">&rarr;</a>
+                </div>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div style="background:#000; border:1px solid #666; padding:5px; text-align:left;">
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home" target="_top">
+                        <img src="https://kanandraw.neocities.org/stuffs/droidring/assets/logo.png" width="200">
+                    </a><br>
+                    <img src="https://kanandraw.neocities.org/stuffs/droidring/assets/droidwidget.png" width="115"><br>
+                    <div style="margin-top:5px;">
+                        <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=previous" target="_top">[Prev]</a>
+                        <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=random" target="_top">[Random]</a>
+                        <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=next" target="_top">[Next]</a>
+                    </div>
+                </div>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <a href="https://hotlinewebring.club/xpnet2002/previous">&lt;</a>
+                <a href="https://hotlinewebring.club/">Hotline Webring</a>
+                <a href="https://hotlinewebring.club/xpnet2002/next">&gt;</a>
+            </div>
+            <div style="background:#000; border:1px solid #333; padding:5px; margin-bottom:8px;">
+                <div id="JaeWEB"></div>
+                <script src="//web.jae.gg/webring-widget.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Player de vídeo -->
+<div id="videobox" style="width: 720px; margin: 20px auto; text-align: center;">
+    <div id="mediaplayer">JW Player goes here</div>
+</div>
+<script type="text/javascript" src="player/jwplayer.js"></script>
+<script type="text/javascript">
+    jwplayer("mediaplayer").setup({
+        flashplayer: "player/player.swf",
+        file: "https://files.catbox.moe/f5j74z.mp4",
+        image: "preview.jpg"
+    });
+</script>
+
+<script>
+initWebring();
+loadWBL();
+
+function initWebring() {
+    var sites = [
+        'https://xpnethub.neocities.org/',
+        'https://khanofmir.neocities.org/',
+        'https://ragazzasola.neocities.org/',
+        'https://ilovewebring.neocities.org/',
+        'https://luahtml.neocities.org/',
+        'https://devhank.neocities.org/'
+    ];
+    var ringName = 'ILoveWebring';
+    var ringID = 'ilovewebring-widget';
+    var indexPage = 'https://ilovewebring.neocities.org/';
+    var tag = document.getElementById(ringID);
+    if (!tag) return;
+    var thisSite = window.top.location.href;
+    var thisIndex = 0;
+    for (var i = 0; i < sites.length; i++) {
+        if (thisSite.indexOf(sites[i]) === 0) { thisIndex = i; break; }
+    }
+    window.randomSite = function() {
+        var otherSites = [];
+        for (var k = 0; k < sites.length; k++) {
+            if (k !== thisIndex) otherSites.push(sites[k]);
+        }
+        window.top.location.href = otherSites[Math.floor(Math.random() * otherSites.length)];
+    };
+    var prevIndex = (thisIndex - 1 < 0) ? sites.length - 1 : thisIndex - 1;
+    var nextIndex = (thisIndex + 1 >= sites.length) ? 0 : thisIndex + 1;
+    tag.innerHTML = '<div style="background:#000; border:1px solid #0f0; padding:6px; text-align:left;">' +
+        '<b style="color:#0f0;">' + ringName + '</b><br>' +
+        '<a href="' + sites[prevIndex] + '" target="_top">&lt;&lt; Prev</a> | ' +
+        '<a href="javascript:void(0)" onclick="randomSite()">Random</a> | ' +
+        '<a href="' + indexPage + '" target="_top">Index</a> | ' +
+        '<a href="' + sites[nextIndex] + '" target="_top">Next &gt;&gt;</a>' +
+        '</div>';
+}
+
+window.ringprev = function() {
+    window.top.location.href = 'https://igor360.neocities.org/webring?action=prev&code=XP202';
+}
+window.ringnext = function() {
+    window.top.location.href = 'https://igor360.neocities.org/webring?action=next&code=XP202';
+}
+
+function loadWBL() {
+    var script = document.createElement('script');
+    script.src = 'https://websetsbylynn.neocities.org/webring/wbl-variables.js';
+    script.onload = function() {
+        var script2 = document.createElement('script');
+        script2.src = 'https://websetsbylynn.neocities.org/webring/wbl-widget.js';
+        script2.onload = function() {
+            setTimeout(function() {
+                var wblDiv = document.getElementById('wbl');
+                if (wblDiv) {
+                    var links = wblDiv.querySelectorAll('a');
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].setAttribute('target', '_top');
+                    }
+                }
+            }, 500);
+        };
+        document.body.appendChild(script2);
+    };
+    document.body.appendChild(script);
+}
+</script>
+
+</body>
+</html>
